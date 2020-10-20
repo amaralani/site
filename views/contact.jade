@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Contact
+  section.contact_area.section_gap
+  .container
+    .row
+      .col-lg-3
+        .contact_info
+          .info_item
+            i.lnr.lnr-envelope
+            h6
+              a(href='#') amir.maralani@gmail.com
+      .col-lg-9
+        form#contactForm.row.contact_form(action='/contact/process' method='post' novalidate='novalidate')
+          .col-md-6
+            .form-group
+              input#name.form-control(type='text' name='name' placeholder='Enter your name')
+            .form-group
+              input#email.form-control(type='email' name='email' placeholder='Enter email address')
+            .form-group
+              input#subject.form-control(type='text' name='subject' placeholder='Enter Subject')
+          .col-md-6
+            .form-group
+              textarea#message.form-control(name='message' rows='1' placeholder='Enter Message')
+          .col-md-12.text-right
+            button.primary_btn(type='submit' value='submit')
+              span Send Message
+
