@@ -1,0 +1,11 @@
+kind: ExternalService
+name: !!python/unicode 'site'
+spec:
+  image_pull_policy: Always
+  port: 3000
+  source:
+    context: .
+    !!python/unicode 'node_version': !!python/unicode '14'
+    project_type: !!python/unicode 'nodejs'
+  domains:
+    - name : maralani.ir
