@@ -9,19 +9,27 @@ block content
           .info_item
             i.lnr.lnr-envelope
             h6
-              a(href='#') amir.maralani@gmail.com
+              a(href='mailto:amir.maralani@gmail.com') amir.maralani@gmail.com
+          .info_item
+            i.fa.fa-linkedin
+            h6
+              a(href='https://www.linkedin.com/in/amirmaralani/') Connect with me on LinkedIn
+          .info_item
+            i.fa.fa-github
+            h6
+              a(href='https://github.com/amaralani') Find me on Github
       .col-lg-9
-        form#contactForm.row.contact_form(action='/contact/process' method='post' novalidate='novalidate')
+        form#contactForm.row.contact_form(action='/contact/process' method='post')
           .col-md-6
             .form-group
-              input#name.form-control(type='text' name='name' placeholder='Enter your name')
+              input#name.form-control(type='text' name='name' placeholder='Enter your name', required)
             .form-group
-              input#email.form-control(type='email' name='email' placeholder='Enter email address')
+              input#email.form-control(type='email', name='email', placeholder='Enter email address', required)
             .form-group
-              input#subject.form-control(type='text' name='subject' placeholder='Enter Subject')
+              input#subject.form-control(type='text' name='subject' placeholder='Enter Subject', required)
           .col-md-6
             .form-group
-              textarea#message.form-control(name='message' rows='1' placeholder='Enter Message')
+              textarea#message.form-control(name='message' rows='1' placeholder='Enter Message', required)
           .col-md-12.text-right
             button.primary_btn(type='submit' value='submit')
               span Send Message
