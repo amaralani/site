@@ -1,4 +1,50 @@
 extends layout
 
 block content
-  p Coming Soon!
+  // ================ Start Banner Area =================
+  section.banner_area.blog_categorie_area.section_gap_top
+    .banner_inner.d-flex.align-items-center
+      .container
+        .banner_content.text-center
+          h2 Blog
+          h3 The posts I have created on DEV community.
+        
+  // ================ End Banner Area =================
+  // ================Blog Area =================
+  section.blog_area
+    .container
+      .row
+        .col-lg-12
+          .blog_left_sidebar
+            each article in articles
+              article.row.blog_item
+                .col-md-3
+                  .blog_info.text-right
+                    .post_tag
+                      each tag in article.tag_list
+                        span #{tag}, 
+                    ul.blog_meta.list
+                      li
+                        |  #{article.user.name} 
+                        i.lnr.lnr-user
+                      li
+                        |  #{article.published_at} 
+                        i.lnr.lnr-calendar-full
+                      li
+                        |  #{article.page_views_count} Views  
+                        i.lnr.lnr-eye
+                      li
+                        |  #{article.comments_count} Comments  
+                        i.lnr.lnr-bubble
+                .col-md-9
+                  .blog_post
+                    img(src='#{article.cover_image}' alt='')
+                    .blog_details
+                      a(href='#{article.url}')
+                        h2 #{article.title}
+                      p
+                        | #{article.description}
+                      a.primary_btn(href='#{article.url}')
+                        span View Full
+  // ================Blog Area =================
+
